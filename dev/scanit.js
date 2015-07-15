@@ -81,8 +81,12 @@
 
                     if (qrDatas[y][x] > 0) {
                         square.style.fill = parameters.blackColor;
+                        square.style.stroke = parameters.blackColor;
+                        square.style.strokeWidth = 1;
                     } else {
                         square.style.fill = parameters.blankColor;
+                        square.style.stroke = parameters.blankColor;
+                        square.style.strokeWidth = 1;
                     }
 
                     group.appendChild(square);
