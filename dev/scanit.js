@@ -57,7 +57,7 @@
         Array.prototype.forEach.call(elements, function (qrZone) {
             var data = qrZone.dataset.scanit,
                 zoneSize = qrZone.clientWidth,
-                svgTag = document.createElementNS("http://www.w3.org/2000/svg", "svg"),
+                svgTag = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                 qrCode = new QrCode(data),
                 qrDatas = qrCode.getData(),
                 squareSize = zoneSize / qrDatas.length,
@@ -69,10 +69,10 @@
             svgTag.setAttribute('width', zoneSize);
             svgTag.setAttribute('height', zoneSize);
             svgTag.setAttribute('viewBow', '0 0 ' + zoneSize + ' ' + zoneSize);
-            svgTag.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xlink", "http://www.w3.org/1999/xlink");
+            svgTag.setAttributeNS('http://www.w3.org/2000/xmlns/', 'xmlns:xlink', 'http://www.w3.org/1999/xlink');
 
             for (y = 0; y < qrDatas.length; y += 1) {
-                group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+                group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
                 group.setAttribute('width', zoneSize);
                 group.setAttribute('height', squareSize);
 
@@ -80,7 +80,7 @@
                 group.setAttribute('y', squareSize * (y + 1));
 
                 for (x = 0; x < qrDatas[y].length; x += 1) {
-                    square = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                    square = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
                     square.setAttribute('width', squareSize);
                     square.setAttribute('height', squareSize);
                     square.setAttribute('x', squareSize * x);
