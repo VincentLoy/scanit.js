@@ -1,3 +1,3 @@
 # scanit.js
 
-## Generate SVG QR Code quickly and easly
+## Generate quickly and easly SVG QR Codes
