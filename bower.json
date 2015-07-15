@@ -1,0 +1,35 @@
+{
+  "name": "scanit.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/VincentLoy/scanit.js",
+  "authors": [
+    "VincentLoy <vincent.loy1@gmail.com>"
+  ],
+  "description": "Generate QRCode easly as hell",
+  "main": [
+    "dist/scanit.min.js",
+    "dev/scanit.js"
+  ],
+  "keywords": [
+    "scanit",
+    "scan",
+    "qrcode",
+    "qr",
+    "code",
+    "jquery",
+    "plugin"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "*.md"
+  ],
+  "dependencies": {
+    "jquery": "~1.11.3"
+  },
+  "devDependencies": {
+    "lesshat": "~3.0.0",
+    "prism": "*"
+  }
+}
