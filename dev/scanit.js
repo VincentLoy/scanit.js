@@ -45,7 +45,14 @@
                 blankColor: '#fff',
                 blackColor: '#000'
             }, args),
-            elements = document.querySelectorAll(elt);
+            elements = document.querySelectorAll(elt),
+            stylizeSquare;
+
+        stylizeSquare = function (elt, color) {
+            elt.style.fill = color;
+            elt.style.stroke = color;
+            elt.style.strokeWidth = 1;
+        };
 
         Array.prototype.forEach.call(elements, function (qrZone) {
             var data = qrZone.dataset.scanit,
@@ -80,13 +87,9 @@
                     square.setAttribute('y', squareSize * y);
 
                     if (qrDatas[y][x] > 0) {
-                        square.style.fill = parameters.blackColor;
-                        square.style.stroke = parameters.blackColor;
-                        square.style.strokeWidth = 1;
+                        stylizeSquare(square, parameters.blackColor);
                     } else {
-                        square.style.fill = parameters.blankColor;
-                        square.style.stroke = parameters.blankColor;
-                        square.style.strokeWidth = 1;
+                        stylizeSquare(square, parameters.blankColor);
                     }
 
                     group.appendChild(square);
