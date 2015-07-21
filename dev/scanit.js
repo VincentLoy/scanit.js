@@ -38,15 +38,16 @@
         return out;
     };
 
-    scanit = function (elt, args) {
+    scanit = function (args) {
 
         var parameters = extend({
-                size: 25,
                 blankColor: '#fff',
                 blackColor: '#000'
             }, args),
-            elements = document.querySelectorAll(elt),
+            elements = document.querySelectorAll('*[data-scanit]'),
             stylizeSquare;
+
+        console.log('test', elements);
 
         stylizeSquare = function (elt, color) {
             elt.style.fill = color;
@@ -103,6 +104,8 @@
     };
 
     exports.scanit = scanit;
+    scanit();
+
 }(window));
 
 /*global $, jQuery, scanit*/
