@@ -14,7 +14,6 @@
         gutil = require('gulp-util'),
         less = require('gulp-less'),
         minifyCSS = require('gulp-minify-css'),
-        sourcemaps = require('gulp-sourcemaps'),
         plumber = require('gulp-plumber'),
         concat = require('gulp-concat'),
         uglify = require('gulp-uglify'),
@@ -33,23 +32,19 @@
             .pipe(plumber())
             .pipe(less({style: 'compressed'})
                 .on('error', gutil.log))
-            .pipe(sourcemaps.init())
             .pipe(minifyCSS({compatibility: 'ie8'}))
-            .pipe(sourcemaps.write())
             .pipe(gulp.dest(targetCSSDir));
     });
 
     gulp.task('compress', function () {
         return gulp.src([jsQrCodePath, devJSDir + '/scanit.js'])
             .pipe(concat('/scanit.js'))
-            .pipe(sourcemaps.init())
             .pipe(uglify({
                 preserveComments: 'some'
             }))
             .pipe(rename({
                 extname: '.min.js'
             }))
-            .pipe(sourcemaps.write())
             .pipe(gulp.dest(distJSDir));
     });
 
